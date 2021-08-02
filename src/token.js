@@ -1,3 +1,5 @@
+const process = require('process');
+
 const apiJwtIssuer = process.env.API_JWT_ISSUER;
 const clientId = process.env.AUTH0_CLIENT_ID;
 const clientSecret = process.env.AUTH0_CLIENT_SECRET;
@@ -24,7 +26,7 @@ async function fetchApiToken() {
     return (await response.json()).access_token;
 }
 
-export default async function getToken() {
+module.exports = async function getToken() {
     if (!token) {
         token = await fetchApiToken();
     }
