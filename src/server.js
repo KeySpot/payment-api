@@ -9,6 +9,10 @@ const fs = require('fs');
 (async function() {
     const app = express();
 
+    app.use('*', function(req) {
+        console.log('KeySpot: ' + req.path);
+    });
+
     app.get('/', async function(req, res) {
         res.status(200).send();
     });
