@@ -23,5 +23,8 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "stripe": "^8.167.0"
+  },
+  "devDependencies": {
+    "@plandid/docker-scripts": "^2.1.0"
   }
 }

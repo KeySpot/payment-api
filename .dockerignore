@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+githooks
+scripts
+exampleData.js
+schemas.json
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.env
+.env.test
+.env.prod
+.env.sample
