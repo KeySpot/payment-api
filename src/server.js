@@ -5,6 +5,7 @@ const compression = require('compression');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
+const bodyParser = require('body-parser');
 
 (async function() {
     const app = express();
@@ -13,10 +14,10 @@ const fs = require('fs');
         res.status(200).send();
     });
 
-    app.use('/webhook', require('./webhook.js'));
+    // app.use(compression());
+    // app.use(express.json());
 
-    app.use(compression());
-    app.use(express.json());
+    app.use('/webhook', require('./webhook.js'));
 
     app.use('*', async function(req, res) {
         res.status(404).json({error: 'no route found'});

@@ -1,6 +1,6 @@
 const process = require('process');
 
-const apiJwtIssuer = process.env.API_JWT_ISSUER;
+const apiJwtIssuer = process.env.JWT_ISSUER;
 const clientId = process.env.AUTH0_CLIENT_ID;
 const clientSecret = process.env.AUTH0_CLIENT_SECRET;
 const apiAudience = process.env.DATABASE_DRIVER_URL;
