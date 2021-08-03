@@ -10,6 +10,7 @@ const fetch = require('node-fetch');
 let token = null;
 
 async function fetchApiToken() {
+    console.log('HERE: ' + `${apiJwtIssuer}/oauth/token`)
     const response = await fetch(`${apiJwtIssuer}/oauth/token`, {
         method: 'POST',
         headers: {
