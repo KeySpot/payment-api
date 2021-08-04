@@ -10,10 +10,6 @@ const fetch = require('node-fetch');
 let token = null;
 
 async function fetchApiToken() {
-    console.log('jwt-issuer: ' + apiJwtIssuer)
-    console.log('client-id: ' + clientId)
-    console.log('client-secret: ' + clientSecret)
-    console.log('api-audience: ' + apiAudience)
     const response = await fetch(`${apiJwtIssuer}/oauth/token`, {
         method: 'POST',
         headers: {
