@@ -39,6 +39,7 @@ router.post('/', express.raw({type: 'application/json'}), async (req, res) => {
         case 'checkout.session.completed':
             // Payment is successful and the subscription is created.
             // You should provision the subscription and save the customer ID to your database.
+            console.log("event type: " + eventType)
             try {
                 await fetch(`${dbDriverUrl}/subscriptions/`, {
                     method: 'PUT',
@@ -71,6 +72,7 @@ router.post('/', express.raw({type: 'application/json'}), async (req, res) => {
             
             break;
         case 'customer.subscription.deleted':
+            console.log("event type: " + eventType)
             try {
                 await fetch(`${dbDriverUrl}/subscriptions/${data.object.customer}`, {
                     method: 'DELETE',

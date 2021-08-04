@@ -3,14 +3,17 @@ const process = require('process');
 const apiJwtIssuer = process.env.JWT_ISSUER;
 const clientId = process.env.AUTH0_CLIENT_ID;
 const clientSecret = process.env.AUTH0_CLIENT_SECRET;
-const apiAudience = process.env.DATABASE_DRIVER_URL;
+const apiAudience = process.env.AUTH0_AUDIENCE;
 
 const fetch = require('node-fetch');
 
 let token = null;
 
 async function fetchApiToken() {
-    console.log('HERE: ' + `${apiJwtIssuer}/oauth/token`)
+    console.log('jwt-issuer: ' + apiJwtIssuer)
+    console.log('client-id: ' + clientId)
+    console.log('client-secret: ' + clientSecret)
+    console.log('api-audience: ' + apiAudience)
     const response = await fetch(`${apiJwtIssuer}/oauth/token`, {
         method: 'POST',
         headers: {
